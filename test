@@ -1,0 +1,8 @@
+url = 'https://www.imdb.com/search/title/?companies=co0144901&sort=num_votes,desc'
+
+resp = requests.get(url)
+html = BeautifulSoup(resp.text, 'html.parser')
+html
+
+for movie in html.select('div.lister-list'):
+    print(movie.text)
